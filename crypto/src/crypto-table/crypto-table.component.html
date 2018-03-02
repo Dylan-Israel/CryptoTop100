@@ -1,0 +1,22 @@
+<table class="table table-dark tabled-striped table-hover borderWhiteAll">
+    <thead class="borderWhiteAll">
+        <tr>
+            <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.rank, 'rank'); sortValues.rank = !sortValues.rank">#</th>
+            <th class="borderWhiteAll clickHand" (click)="sortString(sortValues.name); sortValues.name = !sortValues.name">Name</th>
+            <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.marketCap, 'market_cap_usd'); sortValues.marketCap = !sortValues.marketCap">Market Cap (USD)</th>
+            <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.price, 'price_usd'); sortValues.price = !sortValues.price">Price (USD)</th>
+            <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.volume, 'available_supply'); sortValues.volume = !sortValues.volume">Volume (24h)</th>
+            <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.change24, 'percent_change_24h'); sortValues.change24 = !sortValues.change24">Change (24h)</th>
+        </tr>
+    </thead>
+    <tbody class="borderWhiteAll">
+        <tr *ngFor="let crypto of top100Cryptos;" class="borderWhiteAll" [class.negative]="crypto.percent_change_24h < 0"  [class.positive]="crypto.percent_change_24h >= 0">
+            <td class="borderWhiteAll" [innerHTML]="crypto.rank"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.name"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.market_cap_usd | currency"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.price_usd | currency"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.available_supply"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.percent_change_24h * .01 | percent: '1.1-2'"></td>
+        </tr>
+    </tbody>
+</table>

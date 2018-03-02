@@ -1,0 +1,13 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.btcBlue {
+    color: #6699f6;
+}
+
+.borderWhiteAll {
+    border: 2px solid white !important;
+}
+
+.borderWhiteBottom {
+    border-bottom: 2px solid white !important;
+}
