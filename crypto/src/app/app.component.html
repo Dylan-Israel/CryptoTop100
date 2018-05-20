@@ -1,9 +1,9 @@
 <div class="container text-center">
   <h1 class="text-white">
-    Top 100 Cryptos | Bitcoin Price Chart
+    <a [routerLink]="['']" class="text-white">Top 100 Cryptos</a> | <a [routerLink]="['/bitcoinStats']" class="text-white">Bitcoin Price Chart</a>
   </h1>
   <hr class="bg-white">
-  <h4 class="text-white">Market Cap: <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.total_market_cap_by_available_supply_usd | currency"></span> | 24h Vol. <span  class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.total_volume_usd | currency"> </span> | BTC Dominance: <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.bitcoin_percentage_of_market_cap * .01 | percent: '1.1-2'"></span></h4>
+  <h4 class="text-white">Market Cap: <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.total_market_cap_by_available_supply_usd | currency: 'USD': true: '1.0-0'"></span> | 24h Vol. <span  class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.total_volume_usd | currency: 'USD': true: '1.0-0'"> </span> | BTC Dominance: <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.bitcoin_percentage_of_market_cap * .01 | percent: '1.1-2'"></span></h4>
   <hr class="bg-white">
  
   <router-outlet></router-outlet>

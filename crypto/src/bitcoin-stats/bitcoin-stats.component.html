@@ -1,0 +1,6 @@
+<div class="text-center">
+    <h1 class="text-white" [innerHTML]="bitcoinStats.name"></h1>
+    <h3 class="text-white" [innerHTML]="bitcoinStats.description"></h3>
+</div>
+
+<chart style="height: 500px;" [type]="'line'" [data]="chartData" [options]="options"></chart>
